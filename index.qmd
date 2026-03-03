@@ -32,31 +32,6 @@ This challenge pushes boundaries intentionally. You'll tackle problems that norm
 **The new reality:** The four stages of competence are Ignorance → Awareness → Learning → Mastery. AI lets us produce Mastery-level work while operating primarily in the Awareness stage. I focus on awareness training, you leverage AI for execution, and together we create outputs that used to require years of dedicated study.
 :::
 
-## Getting Started: Repository Setup
-
-::: {.callout-important}
-## 📁 Getting Started
-
-**Step 1:** Fork and clone this challenge repository: `https://github.com/flyaflya/dataVizChallenge.git`
-
-- View the original challenge page: <https://flyaflya.github.io/dataVizChallenge/>
-- Fork it to your GitHub account, then clone it from your GitHub account to your local machine
-
-**Step 2:** Set up your Python environment
-
-- **Recommended:** Use your existing virtual environment from Tech Setup Challenge Part 2
-  - Press `Ctrl+Shift+P` → "Python: Select Interpreter"
-  - Navigate to your existing virtual environment (e.g., `your-previous-project/venv/Scripts/python.exe`)
-  - Install additional packages: `pip install pandas numpy matplotlib seaborn`
-- **Alternative:** Create a new virtual environment following [Quarto documentation](https://quarto.org/docs/projects/virtual-environments.html)
-
-**Step 3:** You're ready to start! The data loading code and starter code for the visualizations are already provided in this file.
-
-**Note:** This challenge uses the same `index.qmd` file you're reading right now - you'll edit it to complete your analysis.
-
-**Before publishing:** Remove or comment out the "Getting Started" and "Grading and Submission" sections from your final GitHub Pages version so your published page reads as a cohesive Coors Field analysis story.
-:::
-
 ::: {.callout-warning}
 ## ⚠️ Cloud Storage Warning
 
@@ -207,8 +182,8 @@ print(avgDF_2021.head())
 **Question 1: Data Aggregation Strategy**
 - How many games are in the dataset? Why do we aggregate individual games into stadium averages before we start the visualization process?
 
-**Answer:** The dataset contains **2,430 games in 2010** and **2,429 games in 2021** (4,859 games in total). 
-We aggregate individual games into stadium averages for several reasons: (1) **Unit of analysis** — the question is “which stadium is most run-friendly?”, so we need one summary per stadium, not per game. (2) **Reduce noise** — single games are highly variable (e.g., blowouts vs. pitcher’s duels); averaging over a full season gives a stable estimate of each ballpark’s run environment. (3) **Visualization clarity** — plotting thousands of game-level points would be unreadable; summarizing to roughly 30 stadiums (one per team) makes bar charts or similar plots interpretable. (4) **Fair comparison** — stadiums host different numbers of games; using *average* runs per game puts every ballpark on the same scale for comparison.
+The dataset includes 2,430 games in 2010 and 2,429 games in 2021 (4,859 total). We aggregate games into stadium-level averages because our question focuses on which stadium is most run-friendly. Averaging reduces game-level noise, improves visualization clarity, and ensures fair comparisons by placing all ballparks on the same runs-per-game scale.
+
 :::
 
 ## Stage 3: Structuring of Visual Mappings
@@ -475,25 +450,3 @@ The two-facet figure compares average total runs per game by stadium in 2010 (le
 - Be appropriate for a business audience
 - Show mastery of object-oriented matplotlib
 - Do not `echo` the code that creates the visualizations
-
-## Grading and Submission
-
-**Submission Checklist:**
-
-- [ ] Fork repository to your GitHub account
-- [ ] Clone locally using Cursor (or VS Code)
-- [ ] Complete discussion questions
-- [ ] Render document to HTML successfully
-- [ ] Push HTML files to your repository
-- [ ] Enable GitHub Pages
-- [ ] Verify site at `https://[your-username].github.io/dataVizChallenge/`
-
-**Grading:**
-
-| Grade | Requirements |
-|-------|--------------|
-| Minimum | Discussion questions for at least 3 of 4 stages; working GitHub Pages site |
-| 85% | All 4 stages with comprehensive, well-reasoned responses |
-| 100% | All discussion questions plus professional visualizations demonstrating mastery |
-
-**Report Quality:** Professional writing, concise analysis, clear demonstration of object-oriented matplotlib.
